@@ -1,22 +1,19 @@
 server:
-  port: 8443
-  servlet:
-    session:
-      timeout: 30
+    port: 8443
+    servlet:
+      session:
+        timeout: 30
     ssl:
-      enabled: true
-      key-aliasa: kimstore
-      key-store: kimstore.jks
-      key-store-password: 'hhhhhh'
-      key-password: 'hhhhhh'
-      trust-store: kimtrust.pkcs12
-      trust-store-password: 'hhhhhh'
+      key-store: keystore.p12
+      key-store-type: PKCS12
+      key-store-password: hhhhhh
+      key-alias: spring
 
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://18.188.1.175:3306/db1?serverTimezone=UTC&characterEncoding=UTF-8
-    username: spring
-    password: hhhh
+    url: jdbc:mysql://errorstack.cvivhkze1ato.us-east-2.rds.amazonaws.com:3306/db1?serverTimezone=UTC&characterEncoding=UTF-8
+    username: admin
+    password: hhhhhhhh
   jpa:
     database: MYSQL
