@@ -3,6 +3,10 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+### HTTPS ###
+*.jks
+*.pkcs12
+*.cer
 
 ### STS ###
 .apt_generated

@@ -1,3 +1,17 @@
+server:
+  port: 8443
+  servlet:
+    session:
+      timeout: 30
+    ssl:
+      enabled: true
+      key-aliasa: kimstore
+      key-store: kimstore.jks
+      key-store-password: 'hhhhhh'
+      key-password: 'hhhhhh'
+      trust-store: kimtrust.pkcs12
+      trust-store-password: 'hhhhhh'
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
