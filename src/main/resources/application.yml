@@ -17,3 +17,8 @@ spring:
     password: hhhhhhhh
   jpa:
     database: MYSQL
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true

@@ -40,7 +40,7 @@ public class AuthController {
     @PostMapping("/login")
     public String login(@RequestBody Map<String, String> userInfo) {
         Member m = mRepo.findByEmail(userInfo.get("email")).orElse(null);
-        if(m.equals(null)) return "didn't find email";
+        if(m == null) return "didn't find email";
 
         if(!passwordEncoder.matches(userInfo.get("password"), m.getPassword())) {
             return "wrong password";
