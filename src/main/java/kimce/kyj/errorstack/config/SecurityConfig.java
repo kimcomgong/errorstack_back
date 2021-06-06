@@ -27,12 +27,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         security
                 .httpBasic().disable()
                 .cors().and()
-                .csrf().disable() // csrf 보안토큰 disable 처리
+                .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // 토큰 기반이므로 세션 사용X
                 .and()
                 .authorizeRequests()
-                .antMatchers("/test/*").hasRole("USER")
-                //.antMatchers("/api/auth").hasRole("USER")
+                .antMatchers("/test/**").hasRole("USER")
+                .antMatchers("/stack/push").hasRole("USER")
+                .antMatchers("/api/auth").hasRole("USER")
                 .anyRequest().permitAll()
                 .and()
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider),

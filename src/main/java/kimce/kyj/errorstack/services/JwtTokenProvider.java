@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
@@ -16,15 +16,15 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
+@Service
 @RequiredArgsConstructor
-@Component
 public class JwtTokenProvider {
     private String secretKey = "kimcomgong";
 
     private long tokenValidTime = 30 * 60 * 1000L;
     private final CustomUserDetailService userDetailService;
 
-    // secretKey Base65 Encoding
+    // secretKey Base64 Encoding
     @PostConstruct
     private void init() {
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
@@ -70,3 +70,5 @@ public class JwtTokenProvider {
         }
     }
 }
+
+

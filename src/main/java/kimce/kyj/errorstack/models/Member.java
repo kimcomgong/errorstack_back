@@ -1,9 +1,6 @@
 package kimce.kyj.errorstack.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,32 +8,25 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Getter
 @NoArgsConstructor
+@Entity
+@Getter
 @AllArgsConstructor
 @Builder
-@Entity
 public class Member implements UserDetails, Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String email;
     private String password;
-    private Date createdAt;
-
-    @PrePersist
-    public void beforeCreate() {
-        createdAt = new Date();
-    }
+    private String createdAt;
 
     @Builder.Default
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles = new ArrayList<>();
 
     //UserDetail Implements
