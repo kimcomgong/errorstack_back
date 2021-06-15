@@ -4,11 +4,9 @@ server:
       session:
         timeout: 30
     ssl:
-      key-store: cert.p12
-#      key-store: keystore.p12
-      key-store-type: PKCS12
+      key-store: letsencrypt.jks
       key-store-password: hhhhhh
-      key-alias: spring
+      key-password: hhhhhh
 
 spring:
   datasource:
