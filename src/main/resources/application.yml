@@ -1,12 +1,10 @@
 server:
     port: 8443
-    servlet:
-      session:
-        timeout: 30
     ssl:
-      key-store: letsencrypt.jks
+      key-store: keystore.p12
       key-store-password: hhhhhh
-      key-password: hhhhhh
+      key-store-type: tomcat
+      key-alias: PKCS12
 
 spring:
   datasource:
