@@ -5,8 +5,7 @@ server:
     key-store-password: hhhhhh
     key-store-type: PKCS12
     key-alias: tomcat
-security:
-  require-ssl: true
+    enabled: true
 
 spring:
   datasource:
