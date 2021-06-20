@@ -1,7 +1,7 @@
 server:
   port: 8443
   ssl:
-    key-store: /etc/letsencrypt/live/error-stack.com/keystore.p12
+    key-store: /etc/letsencrypt/live/error-stack.com-0001/keystore.p12
     key-store-password: hhhhhh
     key-store-type: PKCS12
     key-alias: tomcat
